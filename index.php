@@ -1,14 +1,27 @@
 <?php
 
+//require autoload to include all of composers libraries
 require __DIR__ . '/vendor/autoload.php';
 
+//use Kiev time to log errors and warnings
 date_default_timezone_set('Europe/Kiev');
 
-use Monolog\Logger;
-use Monolog\Handler\StreamHandler;
+//------ create a new instance of monolog
+// use Monolog\Logger;
+// use Monolog\Handler\StreamHandler;
 
-$log = new Logger('name');
-$log->pushHandler(new StreamHandler('app.log', Logger::WARNING));
-$log->addWarning('Foo');
+// $log = new Logger('name');
+// $log->pushHandler(new StreamHandler('app.log', Logger::WARNING));
+// $log->addWarning('Foo');
 
-echo "Hello World";
+$app = new \Slim\Slim();   //new slim object instance
+
+//define a HTTP GET route
+$app->get('/hello/:name', function ($name) {
+    echo "Hello, $name";
+});
+
+//Run the slim application
+$app->run();
+
+echo "<br>Hello World";
