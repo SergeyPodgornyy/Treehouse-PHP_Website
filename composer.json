@@ -8,6 +8,7 @@
     ],
     "require": {
         "monolog/monolog": "^1.17",
-        "slim/slim": "^2.6"
+        "slim/slim": "^2.6",
+        "twig/twig": "^1.22"
     }
 }
