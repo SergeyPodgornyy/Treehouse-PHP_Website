@@ -1,40 +1,8 @@
-<!doctype html>
+{% extends 'main.twig' %}
 
-<html lang="en">
-<head>
-  <meta charset="utf-8">
-  <title>Ralph Waldo Emerson</title>
-  <meta name="description" content="Ralph Waldo Emerson">
-  <meta name="author" content="Treehouse">
-  <link href='http://fonts.googleapis.com/css?family=Roboto:400,700' rel='stylesheet' type='text/css'>
-  <link rel="stylesheet" href="css/master.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-  <script src="js/global.js"></script>
-</head>
+{% block content %}
+  <strong>About</strong>
 
-<body>
-<!--
-  <div id="feedback" class="success">
-    <h3>Success!</h3>
-    <p>You're reading all about Emerson.</p>
-  </div>
--->
-
-
-  <header>
-    <h1>Ralph Waldo Emerson</h1>
-    <nav>
-      <a href="index.html" class="selected">About</a>
-      <a href="contact.html">Contact</a>
-    </nav>
-  </header>
-
-  <div class="emerson">
-    <img src="images/emerson.jpg" alt="Picture of Ralph Waldo Emerson">
-  </div>
-
-  <main>
-    <strong>About</strong>
     <h2>Ralph Waldo Emerson</h2>
 
     <p>Ralph Waldo Emerson <em>(May 25, 1803 – April 27, 1882)</em> was an American essayist, lecturer, and poet, who led the Transcendentalist movement of the mid-19th century. He was seen as a champion of individualism and a prescient critic of the countervailing pressures of society, and he disseminated his thoughts through dozens of published essays and more than 1,500 public lectures across the United States.</p>
@@ -48,15 +16,4 @@
     <p>He remains among the linchpins of the American romantic movement, and his work has greatly influenced the thinkers, writers and poets that have followed him. When asked to sum up his work, he said his central doctrine was "the infinitude of the private man." Emerson is also well known as a mentor and friend of fellow Transcendentalist Henry David Thoreau.</p>
 
     <p><em>Learn more about Ralph Waldo Emerson from <a href="http://en.wikipedia.org/wiki/Ralph_Waldo_Emerson">Wikipedia</a></em></p>
-  </main>
-
-  <footer>
-    <p>A project from <strong><a href="http://teamtreehouse.com">Treehouse</a></strong></p>
-    <nav>
-      <a href="index.html" class="selected">About</a>
-      <a href="contact.html">Contact</a>
-    </nav>
-  </footer>
-
-</body>
-</html>
+{% endblock content %}
