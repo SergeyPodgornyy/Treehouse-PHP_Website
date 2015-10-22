@@ -17,11 +17,15 @@ date_default_timezone_set('Europe/Kiev');
 $app = new \Slim\Slim();   //new slim object instance
 
 //define a HTTP GET route
-$app->get('/hello/:name', function ($name) {
-    echo "Hello, $name";
+$app->get('/', function () use($app){
+    $app->render('index.html');
+});
+
+$app->get('/contact', function () use($app){
+    $app->render('contact.html');
 });
 
 //Run the slim application
 $app->run();
 
-echo "<br>Hello World";
+//echo "<br>Hello World";

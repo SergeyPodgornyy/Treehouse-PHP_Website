@@ -1,0 +1,452 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+  background: #fff;
+  background-size: 10%;
+  font-family: 'Roboto', sans-serif;
+  padding: 110px 0 0 0;
+  margin: 0;
+}
+
+/*
+FEEDBACK
+*/
+
+#feedback {
+  padding: 0px 50px 0;
+  color: #fff;
+  height: 80px;
+  overflow: hidden;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 2;
+  transform: translateY(-100px);
+}
+
+#feedback.success {
+  transform: translateY(-100px);
+  background: #53bbb4;
+  -webkit-animation: feedback-in .3s ease-in-out forwards, feedback-out .3s ease-in-out 5s forwards;
+  -moz-animation:    feedback-in .3s ease-in-out forwards, feedback-out .3s ease-in-out 5s forwards;
+  animation:         feedback-in .3s ease-in-out forwards, feedback-out .3s ease-in-out 5s forwards;
+}
+
+#feedback.fail {
+  transform: translateY(-100px);
+  background: #e15258;
+  -webkit-animation: feedback-in .3s ease-in-out forwards;
+  -moz-animation:    feedback-in .3s ease-in-out forwards;
+  animation:         feedback-in .3s ease-in-out forwards;
+}
+
+#feedback.dismissed {
+  transform: translateY(0);
+  -webkit-animation: feedback-out .3s ease-in-out forwards;
+  -moz-animation:    feedback-out .3s ease-in-out forwards;
+  animation:         feedback-out .3s ease-in-out forwards;
+}
+
+#feedback h3 {
+  margin: 18px 0 3px;
+}
+
+#feedback p {
+  margin: 0;
+  font-size: 14px;
+  opacity: .7;
+}
+
+.dismiss {
+  float: right;
+  padding: 30px 0;
+  opacity: .7;
+  cursor: pointer;
+}
+
+.dismiss:hover {
+  opacity: 1;
+  text-decoration: none;
+}
+
+/*
+HEADER
+*/
+
+header {
+  background: #384047;
+  padding: 0px 50px;
+  color: #fff;
+  height: 80px;
+  overflow: hidden;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 1;
+}
+
+h1 {
+  margin: 0 30px 0 0;
+  padding: 0;
+  font-size: 18px;
+  float: left;
+  line-height: 80px;
+}
+
+header nav {
+  font-size: 16px;
+}
+
+header nav a {
+  margin: 0px 20px;
+  color: #fff;
+  padding: 0 10px;
+  opacity: .7;
+  line-height: 80px;
+  height: 80px;
+  display: inline-block;
+}
+
+nav a:hover {
+  opacity: 1;
+  text-decoration: none;
+  border-bottom: 6px solid #2d3339;
+}
+
+nav .selected {
+  opacity: 1;
+  border-bottom: 6px solid #53bbb4;
+}
+
+/*
+CONTENT
+*/
+
+
+a {
+  transition: opacity .4s;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+.emerson {
+/*  background: url(../images/emerson.jpg) no-repeat center;
+  background-size: contain;*/
+  width: 50%;
+  position: fixed;
+  top: 110px;
+  bottom: 0;
+  left: 50%;
+  right: 0;
+  padding: 0 50px;
+  text-align: center;
+}
+
+.emerson img {
+  max-width: 100%;
+  max-height: 800px;
+}
+
+main {
+  top: 80px;
+  bottom: 0;
+  width: 50%;
+  height: 100%;
+  left: 0;
+  right: 50%;
+  padding: 0 0 30px 50px;
+  overflow: auto;
+}
+
+main h2 {
+  margin: 10px 0 20px;
+  font-size: 24px;
+}
+
+main strong {
+  line-height: 1.7;
+  color: #5a6772;
+}
+
+main a {
+  opacity: .7;
+  color: #53bbb4;
+}
+
+main a:hover {
+  opacity: 1;
+}
+
+main p {
+  line-height: 1.7;
+  color: #444;
+  font-size: 16px;
+}
+
+main em {
+  color: #999;
+}
+
+address {
+  font-style: normal;
+  margin-bottom: 15px;
+}
+
+address h4 {
+  padding: 0;
+  margin: 0;
+}
+
+address p {
+  padding: 0 0 10px;
+  margin: 5px 0 0 0;
+}
+
+address a {
+  font-size: 12px;
+  text-decoration: none;
+}
+
+/*
+FORMS
+*/
+
+fieldset {
+  border: none;
+  padding: 0;
+}
+
+input[type="text"],
+input[type="email"],
+textarea {
+  font-family: 'Roboto', sans-serif;
+  background-color: #eee;
+  width: 100%;
+  border: none;
+  padding: 13px;
+  border: 2px solid #eee;
+  border-radius: 5px;
+  margin-bottom: 10px;
+  font-size: 16px;
+  outline: none;
+  transition: border-color .2s;
+}
+
+input:focus,
+textarea:focus,
+input.fail:focus,
+textarea.fail:focus {
+  border-color: #53bbb4;
+}
+
+input.fail,
+textarea.fail {
+  border-color: #e15258;
+}
+
+textarea {
+  min-height: 200px;
+}
+
+
+input[type="submit"],
+.button {
+  font-family: 'Roboto', sans-serif;
+  background: #53bbb4;
+  width: 100%;
+  border-radius: 5px;
+  color: #fff;
+  font-weight: bold;
+  border: none;
+  cursor: pointer;
+  padding: 20px;
+  font-size: 16px;
+  display: block;
+  border-bottom: 2px solid #48a39d;
+  outline: none;
+  transition: background-color .2s, transform .2s;
+}
+
+.button:hover {
+  background-color: #48a39d;
+}
+
+.button:active {
+  transform: translateY(2px);
+}
+
+/*
+FOOTER
+*/
+
+footer {
+  padding: 0 0 100px 50px;
+  width: 50%;
+}
+
+footer p {
+  color: #999;
+  float: left;
+  padding: 0;
+}
+
+footer nav {
+  float: right;
+}
+
+footer nav a {
+  float: left;
+  padding: 15px 0;
+  margin-left: 40px;
+  opacity: .7;
+}
+
+footer a {
+  color: #53bbb4;
+}
+
+footer strong a:hover {
+  text-decoration: underline;
+}
+
+
+/*
+ANIMATION
+*/
+
+@-webkit-keyframes feedback-in {
+  0%   {
+    transform: translateY(-100px);
+  }
+  80% {
+    transform: translateY(0px);
+    padding-top: 5px;
+  }
+  100% {
+    transform: translateY(0);
+    padding-top: 0;
+  }
+}
+@-moz-keyframes feedback-in {
+  0%   {
+    transform: translateY(-100px);
+  }
+  80% {
+    transform: translateY(0);
+    padding-top: 5px;
+  }
+  100% {
+    transform: translateY(0);
+    padding-top: 0;
+  }
+}
+@keyframes feedback-in {
+  0%   {
+    transform: translateY(-100px);
+  }
+  80% {
+    transform: translateY(0);
+    padding-top: 5px;
+  }
+  100% {
+    transform: translateY(0);
+    padding-top: 0;
+  }
+}
+
+/* out*/
+
+@-webkit-keyframes feedback-out {
+  0%   {
+    transform: translateY(0);
+  }
+  20% {
+    transform: translateY(0px);
+    padding-top: 5px;
+  }
+  100% {
+    transform: translateY(-100px);
+  }
+}
+@-moz-keyframes feedback-out {
+  0%   {
+    transform: translateY(0);
+  }
+  20% {
+    transform: translateY(0px);
+    padding-top: 5px;
+  }
+  100% {
+    transform: translateY(-100px);
+  }
+}
+@keyframes feedback-out {
+  0%   {
+    transform: translateY(0);
+  }
+  20% {
+    transform: translateY(0px);
+    padding-top: 5px;
+  }
+  100% {
+    transform: translateY(-100px);
+  }
+}
+
+/*
+MQ
+*/
+
+
+@media (max-width: 800px) {
+  body {
+    padding-top: 150px;
+  }
+  header {
+    height: 130px;
+  }
+  header nav {
+    clear: left;
+  }
+  header nav a {
+    padding: 0;
+    line-height: 50px;
+    height: 50px;
+    margin: 0 40px 0 0;
+  }
+  .emerson {
+    width: 100%;
+    top: 0;
+    left: 0;
+    position: relative;
+  }
+  .emerson img {
+    padding: 0;
+    max-height: 300px;
+  }
+  main,
+  footer {
+    width: 100%;
+    right: 0;
+  }
+  #feedback,
+  header,
+  footer,
+  main {
+    padding: 0 20px;
+  }
+  footer p {
+    float: none;
+  }
+  footer nav {
+    float: left;
+  }
+  footer nav a {
+    margin: 0 40px 0 0;
+  }
+}
