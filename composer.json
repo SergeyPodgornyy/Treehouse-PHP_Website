@@ -1,1 +1,12 @@
-
+{
+    "name": "sergey/php-website",
+    "authors": [
+        {
+            "name": "Sergey Podgornyy",
+            "email": "sergey.podgornyy@yahoo.de"
+        }
+    ],
+    "require": {
+        "monolog/monolog": "^1.17"
+    }
+}
