@@ -29,10 +29,25 @@ $view->parserExtensions = array(
 //define a HTTP GET route
 $app->get('/', function () use($app){
     $app->render('about.twig');
-});
+})->name('home');
 
 $app->get('/contact', function () use($app){
     $app->render('contact.twig');
+})->name('contact');
+
+$app->post('/contact', function () use($app){
+    //var_dump($app->request->post());
+
+    $name = $app->request->post('name');
+    $email = $app->request->post('email');
+    $msg = $app->request->post('msg');
+
+    if(!empty($name) && !empty($email) && !empty($msg)){
+
+    } else {
+    	// message the user that there was a problem
+    	$app->redirect('./contact');
+    }
 });
 
 //Run the slim application
