@@ -43,7 +43,9 @@ $app->post('/contact', function () use($app){
     $msg = $app->request->post('msg');
 
     if(!empty($name) && !empty($email) && !empty($msg)){
-
+    	$cleanName = filter_var($name, FILTER_SANITIZE_STRING);
+    	$cleanEmail = filter_var($email, FILTER_SANITIZE_EMAIL);
+    	$cleanMsg = filter_var($msg, FILTER_SANITIZE_STRING);
     } else {
     	// message the user that there was a problem
     	$app->redirect('./contact');
