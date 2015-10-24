@@ -50,6 +50,27 @@ $app->post('/contact', function () use($app){
     	// message the user that there was a problem
     	$app->redirect('./contact');
     }
+
+    $transport = Swift_SendmailTransport::newInstance('/usr/sbin/sendmail -bs');
+    $mailer = \Swift_Mailer::newInstance($transport);
+
+    $message = \Swift_Message::newInstance();
+    $message->setSubject('Email from our test website');
+    $message->setFrom(array($cleanEmail=>$cleanName));
+    $message->setTo(array('sergey@localhost'));
+    $message->setBody($cleanMsg);
+
+    $result = $mailer->send($message);
+
+    if($result>0){
+    	//sent a message that says thank you
+    	$app->redirect('./');
+    } else {
+    	//send a message to the user that the message failed to send
+    	//log that there was an error
+    	$app->redirect('./contact');
+    }
+
 });
 
 //Run the slim application

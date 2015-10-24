@@ -13,6 +13,8 @@ To update dependencies run the following command:
 php composer.phar update
 ```
 
+
+
 If you can't direct visit `http://localhost/contact`, perheps it displays on `http://localhost/index.php/contact`. To avoid this inconvenient link, check the following link [how to enable mod_rewrite](http://www.dev-metal.com/enable-mod_rewrite-ubuntu-14-04-lts/).
 
 Or if the link is not active more, just follow the instruction below:
@@ -43,6 +45,8 @@ sudo service apache2 restart
 ```
 To check if mod_rewrite is installed correctly, check your phpinfo() output. 
 
+
+
 **Note:** To remove index.php from the URL, and to redirect the visitor to the non-index.php version of the page: *Move .htaccess file to root directory, where is index.php there.* Check is it looks like:
 ```
 RewriteEngine On
@@ -57,4 +61,23 @@ RewriteCond %{REQUEST_FILENAME} !-d
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteRule ^ index.php [QSA,L]
 
+```
+
+
+Before send a message from Contact page, as a root you need to install the following programms (if you use Debian-based GNU/Linux)
+```
+apt-get install sendmail
+```
+and then
+```
+apt-get install mailutils
+```
+
+Before send a message from Contact page, as a root you need to install the following programms (if you use RPM-based GNU/Linux)
+```
+yum install sendmail
+```
+and then
+```
+yum install mailutils
 ```
